@@ -203,6 +203,7 @@ body {
 .header__info--pc,
 .header__link--tablet,
 .main__text--tablet,
+.main__text--pc,
 .subheader--pc,
 .subheader_divider--pc,
 .subheader__title--pc {
@@ -261,6 +262,10 @@ body {
 }
 
 .subheader--pc {
+    display: none;
+}
+
+.main__text--pc {
     display: none;
 }
 
@@ -371,6 +376,9 @@ body {
 
     .main__text {
         white-space: normal;
+        padding-bottom: 10px;
+        font-size: 14px;
+        line-height: 20px;
     }
 
     .main__text--tablet {
@@ -378,8 +386,9 @@ body {
     }
 
     .main__text--pc {
+        display: block;
         font-size: 14px;
-        line-height: 18px;
+        line-height: 20px;
         padding-bottom: 10px; 
     }
 
@@ -387,5 +396,13 @@ body {
         padding-right: 20px;
     }
 
-    
+    .navigation {
+        width: auto;
+    }
+
+    .navigation_list {
+        display: flex;
+        
+    }
+
 }
