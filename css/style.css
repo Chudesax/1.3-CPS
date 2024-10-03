@@ -273,6 +273,12 @@ p.main__text {
         width: 50%;
         padding-right: 10px;
     }
+
+    .main__more-box {
+        padding-left: 15px;
+    }
+
+
 }
 
 @media (min-width: 1120px) {
@@ -384,5 +390,9 @@ p.main__text {
 
     .main__pic-side {
         width: 50%;
+    }
+
+    .main__more-box {
+        padding-left: 15px;
     }
 }
