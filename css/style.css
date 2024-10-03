@@ -130,9 +130,9 @@ section.navigation__limiter {
 
 .navigation {
     width: 1120px;
-    margin-top: 24px;
-    margin-left: 16px;
-    margin-right: 16px;
+    padding-top: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 .navigation__list {
@@ -140,7 +140,6 @@ section.navigation__limiter {
     justify-content: start;
     align-items: center;
     list-style-type: none;
-    padding-right: 10px;
 }
 
 .navigation__item {
@@ -155,6 +154,7 @@ section.navigation__limiter {
     text-decoration: none;
     color: #7E7E82;
     padding: 10px;
+    padding-right: 25px;
     font-size: 16px;
     white-space: nowrap;
 }
@@ -176,6 +176,9 @@ p.main__text {
 }
 
 .main__more {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     border: none;
     background: none;
     font-size: 16px;
@@ -185,15 +188,21 @@ p.main__text {
 }
 
 .main__more:before {
-    content: url('../icons/arrows.png');
+    content: '';
     display: inline-block;
+    background-color: none;
+    background-image: url('../icons/arrows.png');
+    background-size: 45%;
+    background-position: center;
+    background-repeat: no-repeat;
     width: 24px;
     height: 24px;
-    padding-right: 8px;
+    border-radius: 50%;
+
 }
 
 .main__more:hover {
-    border: 1px solid #B8FFEC;
+    outline: 1px solid #B8FFEC;
     border-radius: 10px;
 }
 
@@ -214,11 +223,25 @@ p.main__text {
 }
 
 .header__btn-tablet,
-.main__text-tablet {
+.main__text-tablet,
+.subheader-pc,
+.header__feedback-pc,
+.header__divider-tablet,
+.main__text-pc {
     display: none;
 }
 
 @media (min-width: 769px) and (max-width: 1119px) {
+
+    .subheader-pc,
+    .main__text-pc {
+        display: none;
+    }
+
+    .header__divider-tablet {
+        display: block;
+        margin: 0 16px;
+    }
 
     .header__btn-tablet {
         display: flex;
@@ -252,4 +275,114 @@ p.main__text {
     }
 }
 
-@media (min-width: 1120px) {}
+@media (min-width: 1120px) {
+
+    .header__burger-side,
+    .subheader__limiter,
+    .header__search-side {
+        display: none;
+    }
+
+    section {
+        max-width: 1120px;
+        margin: 0 auto;
+    }
+
+    .header {
+        padding-left: 0;
+        border-bottom: none;
+    }
+
+    .subheader-pc {
+        display: flex;
+        align-items: center;
+    }
+
+    .subheader__title {
+        white-space: nowrap;
+    }
+
+
+    .header__feedback-pc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header__btn-pc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background: none;
+        color: #1B1C21;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    .header__btn-pc:after {
+        content: "";
+        display: inline-block;
+        background-color: #FF3E79;
+        background-image: url('../icons/tool_icon.png');
+        background-size: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-left: 8px;
+    }
+
+    .header__btn-pc:last-child:after {
+        content: "";
+        display: inline-block;
+        background-color: #FF3E79;
+        background-image: url('../icons/search_icon.png');
+        background-size: 40%;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-left: 8px;
+    }
+
+    .header__btn-pc:hover {
+        background: rgba(128, 128, 128, 0.1);
+        border-radius: 15px;
+        cursor: pointer;
+    }
+
+    section.navigation__limiter {
+        overflow-x: hidden;
+    }
+
+    .navigation__list {
+        flex-wrap: wrap;
+    }
+
+    .main__text-pc {
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        padding: 0 16px;
+        padding-top: 16px;
+    }
+
+    .main__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    .main__text-side {
+        width: 50%;
+    }
+
+    .main__pic-side {
+        width: 50%;
+    }
+}
